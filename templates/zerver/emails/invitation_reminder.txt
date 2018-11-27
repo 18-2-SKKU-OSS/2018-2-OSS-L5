@@ -1,0 +1,11 @@
+{{ _("Hi again,") }}
+
+{% trans %}This is a friendly reminder that {{ referrer_name }} ({{ referrer_email }}) wants you to join them on Zulip, a workplace chat tool that actually makes you more productive.{% endtrans %}
+
+{{ _("To get started, visit the link below:") }}
+    <{{ activate_url }}>
+
+{% trans %}We're here for you at <{{ support_email }}> if you have any questions.{% endtrans %}
+
+{{ _("Cheers,") }}
+{{ _("The Zulip Team") }}

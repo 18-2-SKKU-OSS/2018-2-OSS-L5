@@ -1,0 +1,292 @@
+#!/usr/bin/env python3
+#
+# See docs/subsystems/emoji.md for a high-level explanation of how this system
+# works.
+import os
+import shutil
+import sys
+import ujson
+
+from typing import Any, Dict, List, Optional
+
+from emoji_setup_utils import generate_emoji_catalog, generate_codepoint_to_name_map, \
+    get_emoji_code, generate_name_to_codepoint_map, emoji_names_for_picker, \
+    EMOJISETS, EMOTICON_CONVERSIONS, REMAPPED_EMOJIS
+from emoji_names import EMOJI_NAME_MAPS
+
+ZULIP_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../../')
+sys.path.append(ZULIP_PATH)
+
+from scripts.lib.zulip_tools import generate_sha1sum_emoji, run
+
+TARGET_EMOJI_DUMP = os.path.join(ZULIP_PATH, 'static', 'generated', 'emoji')
+EMOJI_CACHE_PATH = "/srv/zulip-emoji-cache"
+EMOJI_SCRIPT_DIR_PATH = os.path.join(ZULIP_PATH, 'tools', 'setup', 'emoji')
+NODE_MODULES_PATH = os.path.join(ZULIP_PATH, 'node_modules')
+
+EMOJI_CODES_FILE_TEMPLATE = """\
+var emoji_codes = (function () {
+var exports = {};
+
+exports.names = %(names)s;
+
+exports.name_to_codepoint = %(name_to_codepoint)s;
+
+exports.codepoint_to_name = %(codepoint_to_name)s;
+
+exports.emoji_catalog = %(emoji_catalog)s;
+
+exports.emoticon_conversions = %(emoticon_conversions)s;
+
+return exports;
+}());
+if (typeof module !== 'undefined') {
+    module.exports = emoji_codes;
+}
+"""
+
+SPRITE_CSS_FILE_TEMPLATE = """\
+div.emoji,
+span.emoji
+{
+    display: inline-block;
+    background-image: url('sheet-%(emojiset)s-64.png');
+    -webkit-background-size: 5200%%;
+    -moz-background-size: 5200%%;
+    background-size: 5200%%;
+    background-repeat: no-repeat;
+
+    /* Hide the text. */
+    text-indent: 100%%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.emoji-1f419
+{
+    background-image: url('images-google-64/1f419.png') !important;
+    background-position: 0%% 0%% !important;
+    background-size: contain !important;
+}
+
+%(emoji_positions)s
+"""
+
+EMOJI_POS_INFO_TEMPLATE = """\
+.emoji-%(codepoint)s {
+    background-position: %(pos_x)s%% %(pos_y)s%%;
+}
+"""
+
+# change directory
+os.chdir(EMOJI_SCRIPT_DIR_PATH)
+
+if 'TRAVIS' in os.environ:
+    # In Travis CI, we don't have root access
+    EMOJI_CACHE_PATH = "/home/travis/zulip-emoji-cache"
+
+def main() -> None:
+    success_stamp = get_success_stamp()
+    source_emoji_dump = os.path.dirname(success_stamp)
+
+    if not os.path.exists(success_stamp):
+        print("Dumping emojis ...")
+        dump_emojis(source_emoji_dump)
+        run(['touch', success_stamp])
+
+    print("Using cached emojis from {}".format(source_emoji_dump))
+    run(['rm', '-rf', TARGET_EMOJI_DUMP])
+    os.symlink(source_emoji_dump, TARGET_EMOJI_DUMP)
+
+def get_success_stamp() -> str:
+    sha1_hexdigest = generate_sha1sum_emoji(ZULIP_PATH)
+    return os.path.join(EMOJI_CACHE_PATH, sha1_hexdigest, 'emoji', '.success-stamp')
+
+def generate_sprite_css_files(cache_path: str,
+                              emoji_data: List[Dict[str, Any]],
+                              emojiset: str) -> None:
+    def get_max_val(field: str, emoji_data: List[Dict[str, Any]]) -> int:
+        max_val = 0
+        for emoji_dict in emoji_data:
+            max_val = max(max_val, emoji_dict[field])
+            if 'skin_variations' in emoji_dict:
+                for skin_tone, img_info in emoji_dict['skin_variations'].items():
+                    max_val = max(max_val, img_info[field])
+        return max_val
+
+    # Spritesheet CSS generation code. Spritesheets are squared using
+    # padding, so we have to take only the maximum of two dimensions.
+    nrows = get_max_val('sheet_x', emoji_data)
+    ncols = get_max_val('sheet_y', emoji_data)
+    max_dim = max(nrows, ncols)
+    emoji_positions = ""
+    for emoji in emoji_data:
+        if emoji["has_img_google"]:
+            # Why is the test here has_img_google and not
+            # emoji_is_universal?  Because we briefly supported all
+            # Google emoji (not just the universal ones), we need to
+            # ensure the spritesheet is setup to correctly display
+            # those google emoji (in case anyone used them).
+            emoji_positions += EMOJI_POS_INFO_TEMPLATE % {
+                'codepoint': get_emoji_code(emoji),
+                'pos_x': (emoji["sheet_x"] * 100) / max_dim,
+                'pos_y': (emoji["sheet_y"] * 100) / max_dim,
+            }
+
+    SPRITE_CSS_PATH = os.path.join(cache_path, '%s-sprite.css' % (emojiset,))
+    sprite_css_file = open(SPRITE_CSS_PATH, 'w')
+    sprite_css_file.write(SPRITE_CSS_FILE_TEMPLATE % {'emojiset': emojiset,
+                                                      'emoji_positions': emoji_positions,
+                                                      })
+    sprite_css_file.close()
+
+def setup_emoji_farms(cache_path: str, emoji_data: List[Dict[str, Any]]) -> None:
+    def ensure_emoji_image(emoji_dict: Dict[str, Any],
+                           src_emoji_farm: str,
+                           target_emoji_farm: str) -> None:
+        # We use individual images from emoji farm for rendering emojis
+        # in notification messages. We have a custom emoji formatter in
+        # notifications processing code that converts `span` tags to
+        # `img` and that logic requires us to have non-qualified
+        # `emoji_code` as file name for emoji.
+        emoji_code = get_emoji_code(emoji_dict)
+        img_file_name = emoji_code + '.png'
+        src_file = os.path.join(src_emoji_farm, emoji_dict['image'])
+        dst_file = os.path.join(target_emoji_farm, img_file_name)
+        shutil.copy2(src_file, dst_file)
+
+    def setup_emoji_farm(emojiset: str,
+                         emoji_data: List[Dict[str, Any]],
+                         alt_name: Optional[str]=None) -> None:
+        # `alt_name` is an optional parameter that we use to avoid duplicating below
+        # code. It is only used while setting up google-blob emojiset as it is just
+        # a wrapper for an older version of emoji-datasource package due to which we
+        # need to use 'google' at some places in this code. It has no meaning for other
+        # emojisets and is just equivalent to `emojiset`.
+        alt_name = alt_name or emojiset
+
+        # Copy individual emoji images from npm packages.
+        src_emoji_farm = os.path.join(
+            NODE_MODULES_PATH, 'emoji-datasource-' + emojiset, 'img', alt_name, '64')
+        target_emoji_farm = os.path.join(cache_path, 'images-' + emojiset + '-64')
+        run(['mkdir', '-p', target_emoji_farm])
+        print("Copying individual image files...")
+        for emoji_dict in emoji_data:
+            if emoji_dict['has_img_' + alt_name]:
+                ensure_emoji_image(emoji_dict, src_emoji_farm, target_emoji_farm)
+                skin_variations = emoji_dict.get('skin_variations', {})
+                for skin_tone, img_info in skin_variations.items():
+                    if img_info['has_img_' + alt_name]:
+                        ensure_emoji_image(img_info, src_emoji_farm, target_emoji_farm)
+
+        # Copy zulip.png to the emoji farm.
+        zulip_image = "{}/static/assets/zulip-emoji/*".format(ZULIP_PATH)
+        run(['cp', '-RPp', zulip_image, target_emoji_farm], shell=True)
+
+        # Copy spritesheets.
+        emoji_data_path = os.path.join(NODE_MODULES_PATH, 'emoji-datasource-' + emojiset)
+        input_sprite_sheet = os.path.join(emoji_data_path, 'img', alt_name, 'sheets-256', '64.png')
+        output_sprite_sheet = os.path.join(cache_path, 'sheet-%s-64.png' % (emojiset,))
+        run(['cp', input_sprite_sheet, output_sprite_sheet])
+
+        # We hardcode octopus emoji image to Google emojiset's old
+        # "cute octopus" image. Copy it to the emoji farms.
+        input_img_file = os.path.join(EMOJI_SCRIPT_DIR_PATH, '1f419.png')
+        output_img_file = os.path.join(cache_path, 'images-' + emojiset + '-64', '1f419.png')
+        run(['cp', input_img_file, output_img_file])
+
+        generate_sprite_css_files(cache_path, emoji_data, emojiset)
+
+    # Setup standard emojisets.
+    for emojiset in ['google', 'twitter']:
+        setup_emoji_farm(emojiset, emoji_data)
+
+    # Setup old google "blobs" emojiset.
+    GOOGLE_BLOB_EMOJI_DATA_PATH = os.path.join(NODE_MODULES_PATH,
+                                               'emoji-datasource-google-blob',
+                                               'emoji.json')
+    with open(GOOGLE_BLOB_EMOJI_DATA_PATH) as fp:
+        blob_emoji_data = ujson.load(fp)
+    setup_emoji_farm('google-blob', blob_emoji_data, 'google')
+
+def setup_old_emoji_farm(cache_path: str,
+                         emoji_map: Dict[str, str],
+                         emoji_data: List[Dict[str, Any]]) -> None:
+    # Code for setting up old emoji farm.
+    os.chdir(cache_path)
+    emoji_cache_path = os.path.join(cache_path, 'images', 'emoji')
+    unicode_emoji_cache_path = os.path.join(cache_path, 'images', 'emoji', 'unicode')
+    google_emoji_cache_path = os.path.join(cache_path, 'images-google-64')
+    run(['mkdir', '-p', emoji_cache_path])
+    run(['mkdir', '-p', unicode_emoji_cache_path])
+
+    # Symlink zulip.png image file.
+    image_file_path = os.path.join(google_emoji_cache_path, 'zulip.png')
+    symlink_path = os.path.join(emoji_cache_path, 'zulip.png')
+    os.symlink(image_file_path, symlink_path)
+
+    unicode_symlink_path = os.path.join(unicode_emoji_cache_path, 'zulip.png')
+    os.symlink(image_file_path, unicode_symlink_path)
+
+    for name, codepoint in emoji_map.items():
+        mapped_codepoint = REMAPPED_EMOJIS.get(codepoint, codepoint)
+        image_file_path = os.path.join(google_emoji_cache_path, '{}.png'.format(mapped_codepoint))
+        symlink_path = os.path.join(emoji_cache_path, '{}.png'.format(name))
+        os.symlink(image_file_path, symlink_path)
+        try:
+            # `emoji_map` contains duplicate entries for the same codepoint with different
+            # names. So creation of symlink for <codepoint>.png may throw `FileExistsError`.
+            unicode_symlink_path = os.path.join(unicode_emoji_cache_path, '{}.png'.format(codepoint))
+            os.symlink(image_file_path, unicode_symlink_path)
+        except FileExistsError:
+            pass
+
+def generate_map_files(cache_path: str, emoji_catalog: Dict[str, List[str]]) -> None:
+    # This function generates the various data files consumed by webapp, mobile apps, bugdown etc.
+    names = emoji_names_for_picker(EMOJI_NAME_MAPS)
+    codepoint_to_name = generate_codepoint_to_name_map(EMOJI_NAME_MAPS)
+    name_to_codepoint = generate_name_to_codepoint_map(EMOJI_NAME_MAPS)
+
+    EMOJI_CODES_FILE_PATH = os.path.join(cache_path, 'emoji_codes.js')
+    with open(EMOJI_CODES_FILE_PATH, 'w') as emoji_codes_file:
+        emoji_codes_file.write(EMOJI_CODES_FILE_TEMPLATE % {
+            'names': names,
+            'name_to_codepoint': name_to_codepoint,
+            'codepoint_to_name': codepoint_to_name,
+            'emoji_catalog': emoji_catalog,
+            'emoticon_conversions': EMOTICON_CONVERSIONS,
+        })
+
+    NAME_TO_CODEPOINT_PATH = os.path.join(cache_path, 'name_to_codepoint.json')
+    with open(NAME_TO_CODEPOINT_PATH, 'w') as name_to_codepoint_file:
+        name_to_codepoint_file.write(ujson.dumps(name_to_codepoint))
+
+    CODEPOINT_TO_NAME_PATH = os.path.join(cache_path, 'codepoint_to_name.json')
+    with open(CODEPOINT_TO_NAME_PATH, 'w') as codepoint_to_name_file:
+        codepoint_to_name_file.write(ujson.dumps(codepoint_to_name))
+
+    EMOTICON_CONVERSIONS_PATH = os.path.join(cache_path, 'emoticon_conversions.json')
+    with open(EMOTICON_CONVERSIONS_PATH, 'w') as emoticon_conversions_file:
+        emoticon_conversions_file.write(ujson.dumps(EMOTICON_CONVERSIONS))
+
+def dump_emojis(cache_path: str) -> None:
+    with open('emoji_map.json') as emoji_map_file:
+        emoji_map = ujson.load(emoji_map_file)
+
+    # `emoji.json` or any other data file can be sourced from any of the supported
+    # emojiset packages, they all contain the same data files.
+    EMOJI_DATA_FILE_PATH = os.path.join(NODE_MODULES_PATH, 'emoji-datasource-google', 'emoji.json')
+    with open(EMOJI_DATA_FILE_PATH) as emoji_data_file:
+        emoji_data = ujson.load(emoji_data_file)
+    emoji_catalog = generate_emoji_catalog(emoji_data, EMOJI_NAME_MAPS)
+
+    # Setup emoji farms.
+    run(['rm', '-rf', cache_path])
+    setup_emoji_farms(cache_path, emoji_data)
+    setup_old_emoji_farm(cache_path, emoji_map, emoji_data)
+
+    # Generate various map files.
+    generate_map_files(cache_path, emoji_catalog)
+
+if __name__ == "__main__":
+    main()

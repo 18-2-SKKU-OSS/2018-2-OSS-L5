@@ -1,0 +1,11 @@
+{{ _('Hello there.') }}
+
+{{ _('You recently signed up for Zulip. Awesome!') }}
+
+{{ _('To complete signup, please click here:') }}
+    <{{ activate_url }}>
+
+{% trans %}Feel free to give us a shout at <{{ support_email }}> if you have any questions.{% endtrans %}
+
+{{ _("Cheers,") }}
+{{ _("Team Zulip") }}

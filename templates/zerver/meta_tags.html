@@ -1,0 +1,19 @@
+<!-- Google / Search Engine Tags -->
+{% if allow_search_engine_indexing %}
+<meta name="description" content="Zulip combines the immediacy of real-time chat with an email threading model. With Zulip, you can catch up on important conversations while ignoring irrelevant ones.">
+{% else %}
+<meta name="robots" content="noindex,nofollow">
+{% endif %}
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="{{ realm_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zulip">
+<meta property="og:title" content="The world's most productive team chat">
+<meta property="og:description" content="Zulip combines the immediacy of real-time chat with an email threading model. With Zulip, you can catch up on important conversations while ignoring irrelevant ones.">
+<meta property="og:image" content="{{ realm_uri }}/static/images/logo/zulip-icon-128x128.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="The world's most productive team chat">
+<meta name="twitter:description" content="Zulip combines the immediacy of real-time chat with an email threading model. With Zulip, you can catch up on important conversations while ignoring irrelevant ones.">
+<meta name="twitter:image" content="{{ realm_uri }}/static/images/logo/zulip-icon-128x128.png">

@@ -1,0 +1,11 @@
+{{#if invite_only}}
+    {{t 'This is a <span class="fa fa-lock" aria-hidden="true"></span> <b>private stream</b>. Only people who have been invited can access its content, but any member of the stream can invite others.' }}
+    {{#if history_public_to_subscribers}}{{t 'New members can view complete message history.' }}
+    {{else}}{{t 'New members can only see messages sent after they join.' }}
+    {{/if}}
+{{else}}
+    {{t 'This is a <span class="fa fa-globe" aria-hidden="true"></span> <b>public stream</b>. Any member of the organization can join without an invitation.' }}
+{{/if}}
+{{#if is_announcement_only}}
+{{t 'Only organization administrators can post.'}}
+{{/if}}
