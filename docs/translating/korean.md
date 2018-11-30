@@ -1,4 +1,4 @@
-# Korean translation style guid
+# Korean translation style guide
 
 ## Rules
 
