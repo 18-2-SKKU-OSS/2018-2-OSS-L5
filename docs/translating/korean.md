@@ -1,6 +1,14 @@
 # Korean translation style guide
 
 ## Rules
+### 1. Formal or Informal? Formal!
+Follow formal grammar of Korean. (Reference page `https://www.korean.go.kr/`)
+If there is a word which is informal but allowed, then use formal form except formal word is rarely used.
+### 2. Form of sentence end
+### 3. The singluar and the plural
+### 4. Loanword orthography
+### 5. punctuation marks
+### 6. Template for Terms
 
 ## Terms
 - message - **메시지**
