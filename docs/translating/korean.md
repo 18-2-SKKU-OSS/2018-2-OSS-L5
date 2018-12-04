@@ -2,9 +2,14 @@
 
 ## Rules
 ### 1. Formal or Informal? Formal!
+> Use foraml grammar
+
 Follow formal grammar of Korean. (Reference page `https://www.korean.go.kr/`)
 If there is a word which is informal but allowed, then use formal form except formal word is rarely used.
 ### 2. Form of sentence end
+> :one: `다, 나, 까` with punctuation marks :two: `Noun form` without puncuation marks
+
+If there is punctuation marks for end('.', '!', '?', etc), then use `다, 나, 까` according to contxt. If there is no punctuatio marks, then end with noun form.
 ### 3. The singluar and the plural
 ### 4. Loanword orthography
 ### 5. punctuation marks
