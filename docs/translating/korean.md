@@ -32,6 +32,8 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
 > examples of usage <`code`> <br>
 > description
 ## Terms
+- linkifier - 
+
 - message - **메시지**
   
   *(Naver, Google)*
