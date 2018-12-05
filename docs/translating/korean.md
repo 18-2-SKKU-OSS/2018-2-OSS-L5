@@ -59,6 +59,7 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
   `Google: Creating and Managing Organizations = 조직 생성 및 관리`
   
   There are many terms for organization('조직', '기관', '단체'). We choose '조직' which is generally used for formal group.
+  
 - recipient - **받는 사람**
 
    *(Naver, Google(Gmail))*
@@ -66,8 +67,9 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
    `Naver: 받는 사람 (이메일 서비스)`<br>
    `Google: 받는 사람 (Gmail)`
 
+- stream permission - 
+
 ## Phrases
-- stream permission -
 
 ## Other
 - user / member
