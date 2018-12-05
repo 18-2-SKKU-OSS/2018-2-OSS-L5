@@ -32,6 +32,8 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
 > examples of usage <`code`> <br>
 > description
 ## Terms
+- generic bot - 
+
 - history - **기록**
   
   *(Google, Youtube)*
