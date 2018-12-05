@@ -20,7 +20,12 @@ Plural expression is not advanced in Korean languate. Use singular expression of
 When translate loanword, then follow loanword orthography. For foreign language, then refer below contents. If there is no description for target word or sentence, then research usages in other websites and follow that form.
 
 (Reference page: `https://www.korean.go.kr/front/foreignSpell/foreignSpellList.do?mn_id=96`)
-### 5. punctuation marks
+### 5. Punctuation marks
+> Follow `original sentence` 
+
+If there is punctuation marks(**:**, **" "**, etc), then follow original sentence's space.
+
+(ex: `New stream notifications: = 새 스트림 알림:` | :no_entry_sign: `새 스트림 알림_:` )
 ### 6. Template for Terms
 
 ## Terms
