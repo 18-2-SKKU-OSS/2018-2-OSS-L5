@@ -58,6 +58,7 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
    `Google: 받는 사람 (Gmail)`
 
 ## Phrases
+- stream permission -
 
 ## Other
 - user / member
