@@ -2,7 +2,7 @@
 
 ## Rules
 ### 1. Formal or Informal? Formal!
-> Use foraml grammar
+> Use `foraml` grammar
 
 Follow formal grammar of Korean. (Reference page: `https://www.korean.go.kr/`)
 If there is a word which is informal but allowed, then use formal form except formal word is rarely used.
@@ -27,7 +27,10 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
 
 (ex: `New stream notifications: = 새 스트림 알림:` | :no_entry_sign: `새 스트림 알림_:` )
 ### 6. Template for Terms
-
+> original word - (translation <**bold**>) <br>
+> usage <*Italic*> <br>
+> examples of usage <`code`> <br>
+> description
 ## Terms
 - message - **메시지**
   
