@@ -50,6 +50,13 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
   `Naver: 메시지 보내기`<br>
   `Google: Check your messages on your computer = 컴퓨터에서 메시지 확인하기`
   
+- organization - **조직**
+  
+  *(Google)*
+  
+  `Google: Creating and Managing Organizations = 조직 생성 및 관리`
+  
+  There are many terms for organization('조직', '기관', '단체'). We choose '조직' which is generally used for formal group.
 - recipient - **받는 사람**
 
    *(Naver, Google(Gmail))*
