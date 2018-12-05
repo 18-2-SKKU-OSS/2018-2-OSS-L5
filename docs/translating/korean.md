@@ -32,6 +32,15 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
 > examples of usage <`code`> <br>
 > description
 ## Terms
+- history - **기록**
+  
+  *(Google, Youtube)*
+  
+  `Google: browsing history = 검색 기록`<br>
+  `Youtube: watch history = 시청 기록`
+  
+   History can be translated with '역사', but it means study of past which is improper in this context. In this context, history is used similarly to record. There are a lot of Korean words that means record; '기록', '이력', '내역'. Many websites use '기록' to history because it is intuitive, so we choose to use it.
+
 - linkifier - 
 
 - message - **메시지**
@@ -47,15 +56,6 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
    
    `Naver: 받는 사람 (이메일 서비스)`<br>
    `Google: 받는 사람 (Gmail)`
- 
-- history - **기록**
-  
-  *(Google, Youtube)*
-  
-  `Google: browsing history = 검색 기록`<br>
-  `Youtube: watch history = 시청 기록`
-  
-   History can be translated with '역사', but it means study of past which is improper in this context. In this context, history is used similarly to record. There are a lot of Korean words that means record; '기록', '이력', '내역'. Many websites use '기록' to history because it is intuitive, so we choose to use it.
 
 ## Phrases
 
