@@ -18,7 +18,9 @@
    Naver: 받는 사람 (이메일 서비스)
    
    Google: 받는 사람 (Gmail)
-
+   
+- organization - **조직**
+   
 ## Phrases
 
 ## Other
