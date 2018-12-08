@@ -1,24 +1,24 @@
 # Korean translation style guide
 
-## Rules
+## Rule
+### N. Space writing for number expressions
+> follow the 'original' expression
+
+According to Korean grammar, the spacing behind the numbers is in principle, but it is also OK to have no spacing. Therefore, it decided to follow the text of the zulip.
 
 ## Terms
-- message - **메시지**
-  
-  *(Naver, Google)*
-  
-  Naver: 메시지 보내기
-  
-  Google: Check your messages on your computer = 컴퓨터에서 메시지 확인하기
-  
-- recipient - **받는 사람**
+* Subscribe - **구독**
 
-   *(Naver, Google(Gmail))*
-   
-   Naver: 받는 사람 (이메일 서비스)
-   
-   Google: 받는 사람 (Gmail)
+   *(Youtube)*
+
+   `Youtube: 구독`
 
 ## Phrases
 
 ## Other
+
+* You - **귀하**
+
+   The Korean language has polite expressions, and the word "귀하" is a more polite expression for one's opponent.
+
+   *"귀하" (Google)*
