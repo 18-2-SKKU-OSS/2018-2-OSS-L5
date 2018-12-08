@@ -56,6 +56,15 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
   
   `Naver: 메시지 보내기`<br>
   `Google: Check your messages on your computer = 컴퓨터에서 메시지 확인하기`
+
+- mute - **뮤트**
+
+  *(Twitter)*
+  
+  `Twitter: Mute = 뮤트`
+  
+  Mute operation hide the messages and off the notification. Hide is translated into '숨기기', and 'Turn off' is translated into '끄기'.
+  These two words are not compatible. So we choose '뮤트' which is phonetic writing of 'mute'. It is reasonable to use becuase Twitter     also translate it into '뮤트'.
   
 - organization - **조직**
   
