@@ -19,6 +19,6 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
 
 * You - **귀하**
 
-The Korean language has polite expressions, and the word "귀하" is a more polite expression for one's opponent.
+   The Korean language has polite expressions, and the word "귀하" is a more polite expression for one's opponent.
 
-*"귀하" (Google)*
+   *"귀하" (Google)*
