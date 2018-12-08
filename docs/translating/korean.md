@@ -74,4 +74,6 @@ Linkifier transform regular expression to user defined link. So we translate it 
 ## Phrases
 
 ## Other
-- user / member
+- user / member - **사용자** / **회원**
+
+These two words are very similar, but we think they have different usages. 'User' is used to all the joined people in zulip, and the 'member' is specialized to people in organization or stream. So we translate user into '사용자', and member into ''
