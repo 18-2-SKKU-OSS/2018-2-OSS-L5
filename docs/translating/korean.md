@@ -31,8 +31,11 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
 > usage <*Italic*> <br>
 > examples of usage <`code`> <br>
 > description
+
 ## Terms
-- generic bot - 
+- generic bot - **범용 봇*
+
+generic bot is the bot which is able to webhook both incoming/outgoing. generic is oftenly translated into '일반', but its meaning is similar to normal. So we use '범용' which is little bit more strange than '일반', but whose meaning is be able to use anywhere.
 
 - history - **기록**
   
@@ -73,8 +76,6 @@ Permission is used with organization, stream, etc. And it means control the righ
    
    `Naver: 받는 사람 (이메일 서비스)`<br>
    `Google: 받는 사람 (Gmail)`
-
-
 
 ## Phrases
 
