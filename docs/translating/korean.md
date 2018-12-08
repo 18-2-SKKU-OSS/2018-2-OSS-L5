@@ -1,6 +1,6 @@
 # Korean translation style guide
 
-## Rules
+## Rule
 
 ## Terms
 - message - **메시지**
@@ -18,8 +18,6 @@
    Naver: 받는 사람 (이메일 서비스)
    
    Google: 받는 사람 (Gmail)
-   
-- organization - **조직**
    
 ## Phrases
 
