@@ -99,6 +99,10 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
    `Google: 받는 사람 (Gmail)`
 
 ## Phrases
+- missing - **누락된**
+
+  Missing is used like forgotten(missing space), unseen(missing message). There is no Korean word whose meaning handles both situations.   We think to choose the word which can be used in one situation and can be used the other situation but little bit strange. So we         choose '누락된' and '놓친', but '놓친' has strong similarity with unseen which cannot be used in forgotten. Finally '누락된' is chosen.
+
 - narrow to - **한정해서 보기**
 
   We translate 'narrow to' into '한정해서 보기'. '한정해서 보기' may be strange expression to Korean, but there is 'narrow by' in other     file which is exactly translated into '로 한정하기'. So we choose '한정해서 보기' to maintain consistency.
