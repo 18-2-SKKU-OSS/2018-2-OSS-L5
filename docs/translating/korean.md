@@ -4,7 +4,7 @@
 ### N. Space writing for number expressions
 > follow the 'original' expression
 
-According to Korean grammar, the spacing behind the numbers is in principle, but it is also OK to have no spacing. Therefore, it decided to follow the text of the tulip.
+According to Korean grammar, the spacing behind the numbers is in principle, but it is also OK to have no spacing. Therefore, it decided to follow the text of the zulip.
 
 ## Terms
 * Subscribe - **구독**
