@@ -68,7 +68,7 @@ Linkifier transform regular expression to user defined link. So we translate it 
 - permission - **권한**
 
 Permission is used with organization, stream, etc. And it means control the right in target group, so we translate it to '권한'
- wich is similar to right.
+ which is similar to right.
  
 - recipient - **받는 사람**
 
