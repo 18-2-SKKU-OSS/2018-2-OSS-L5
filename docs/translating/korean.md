@@ -78,6 +78,9 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
    `Google: 받는 사람 (Gmail)`
 
 ## Phrases
+- narrow to - **한정해서 보기**
+
+  We translate 'narrow to' into '한정해서 보기'. '한정해서 보기' may be strange expression to Korean, but there is 'narrow by' in other     file which is exactly translated into '로 한정하기'. So we choose '한정해서 보기' to maintain consistency.
 
 ## Other
 - user / member - **사용자** / **회원**
