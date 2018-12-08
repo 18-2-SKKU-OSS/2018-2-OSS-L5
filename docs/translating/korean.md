@@ -41,9 +41,11 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
   `Google: browsing history = 검색 기록`<br>
   `Youtube: watch history = 시청 기록`
   
-   History can be translated with '역사', but it means study of past which is improper in this context. In this context, history is used similarly to record. There are a lot of Korean words that means record; '기록', '이력', '내역'. Many websites use '기록' to history because it is intuitive, so we choose to use it.
+History can be translated with '역사', but it means study of past which is improper in this context. In this context, history is used similarly to record. There are a lot of Korean words that means record; '기록', '이력', '내역'. Many websites use '기록' to history because it is intuitive, so we choose to use it.
 
-- linkifier - 
+- linkifier - **링크 변환기**
+
+Linkifier transform regular expression to user defined link. So we translate it '링크 변환기' which means '링크' is phonetic writing of of link, '변환기' is something transforms target source into target destination.
 
 - message - **메시지**
   
