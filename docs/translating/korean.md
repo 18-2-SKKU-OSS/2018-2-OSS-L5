@@ -91,9 +91,9 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
 
   We translate 'narrow to' into '한정해서 보기'. '한정해서 보기' may be strange expression to Korean, but there is 'narrow by' in other     file which is exactly translated into '로 한정하기'. So we choose '한정해서 보기' to maintain consistency.
 
-- in (Somewhere) - **~ 내의**
+- in (Somewhere) - **내의**
 
-  There are frequently used two translations; '~에 있는', '~ 내의'. We think '~ 내의' is more formal to use, so we choose it.
+  There are frequently used two translations; '에 있는', '내의'. We think '~ 내의' is more formal to use, so we choose it.
 
 ## Other
 - user / member - **사용자** / **회원**
