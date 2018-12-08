@@ -9,9 +9,9 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
 ## Terms
 * Subscribe - **구독**
 
- *(Youtube)*
+   *(Youtube)*
 
- `Youtube: 구독`
+   `Youtube: 구독`
 
 ## Phrases
 
