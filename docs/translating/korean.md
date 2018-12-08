@@ -54,6 +54,10 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
   
   History can be translated with '역사', but it means study of past which is improper in this context. In this context, history is used   similarly to record. There are a lot of Korean words that means record; '기록', '이력', '내역'. Many websites use '기록' to history       because it is intuitive, so we choose to use it.
 
+- invalid - **유효하지 않은**
+
+  Invalid can be translated into '유효하지 않은' and '잘못된'. '잘못된' means wrong. We think it can't represent various invalid             situations, so we choose '유효하지 않은' which is not oftenly used but can handle wide range.
+
 - linkifier - **링크 변환기**
 
   Linkifier transform regular expression to user defined link. So we translate it '링크 변환기' which means '링크' is phonetic writing of   of link, '변환기' is something transforms target source into target destination.
