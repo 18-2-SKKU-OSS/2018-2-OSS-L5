@@ -61,7 +61,12 @@ Linkifier transform regular expression to user defined link. So we translate it 
   `Google: Creating and Managing Organizations = 조직 생성 및 관리`
   
   There are many terms for organization('조직', '기관', '단체'). We choose '조직' which is generally used for formal group.
-  
+
+- permission - **권한**
+
+Permission is used with organization, stream, etc. And it means control the right in target group, so we translate it to '권한'
+ wich is similar to right.
+ 
 - recipient - **받는 사람**
 
    *(Naver, Google(Gmail))*
@@ -69,7 +74,7 @@ Linkifier transform regular expression to user defined link. So we translate it 
    `Naver: 받는 사람 (이메일 서비스)`<br>
    `Google: 받는 사람 (Gmail)`
 
-- stream permission - 
+
 
 ## Phrases
 
