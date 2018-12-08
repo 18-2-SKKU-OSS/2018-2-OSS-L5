@@ -37,6 +37,10 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
 
   Collapse is translated literally into '붕괴'. But it means like fold in Zulip, so we choose '접기' which has similar meaning of fold.
 
+- draft - **임시 보관**
+
+  Draft is used like temporary save in Zulip. So we translate draft into '임시 보관' which is consist of '임시' which means temporary and   '보관' which means save.
+
 - generic bot - **범용 봇**
 
   generic bot is the bot which is able to webhook both incoming/outgoing. generic is oftenly translated into '일반', but its meaning is   similar to normal. So we use '범용' which is little bit more strange than '일반', but whose meaning is be able to use anywhere.
