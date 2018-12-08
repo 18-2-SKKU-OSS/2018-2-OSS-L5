@@ -6,10 +6,12 @@
 
 Follow formal grammar of Korean. (Reference page: `https://www.korean.go.kr/`)
 If there is a word which is informal but allowed, then use formal form except formal word is rarely used.
+
 ### 2. Form of sentence end
 > **1.** `다, 나, 까` with punctuation marks **2.** `Noun form` without puncuation marks
 
-If there is punctuation marks for end(**.**, **!**, **?**, etc), then use `다, 나, 까` according to contxt. If there is no punctuatio marks, then end with noun form.
+If there is punctuation marks for end(**.**, **!**, **?**, etc), then use `다, 나, 까` according to contxt. If there is no punctuation marks, then end with noun form.
+
 ### 3. Singluar and Plural
 > Use `singular form`
 
@@ -20,12 +22,14 @@ Plural expression is not advanced in Korean languate. Use singular expression of
 When translate loanword, then follow loanword orthography. For foreign language, then refer below contents. If there is no description for target word or sentence, then research usages in other websites and follow that form.
 
 (Reference page: `https://www.korean.go.kr/front/foreignSpell/foreignSpellList.do?mn_id=96`)
+
 ### 5. Punctuation marks
 > Follow `original sentence` 
 
 If there is punctuation marks(**:**, **" "**, etc), then follow original sentence's space.
 
 (ex: `New stream notifications: = 새 스트림 알림:` | :no_entry_sign: `새 스트림 알림_:` )
+
 ### 6. Template for Terms
 > original word - (translation <**bold**>) <br>
 > usage <*Italic*> <br>
@@ -43,7 +47,7 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
 
 - generic bot - **범용 봇**
 
-  generic bot is the bot which is able to webhook both incoming/outgoing. generic is oftenly translated into '일반', but its meaning is   similar to normal. So we use '범용' which is little bit more strange than '일반', but whose meaning is be able to use anywhere.
+  generic bot is the bot which is able to webhook both incoming/outgoing. generic is oftenly translated into '일반', but its meaning is   similar to normal. So we use '범용' which is little bit more strange than '일반', but whose meaning is something can be able to use       anywhere.
 
 - history - **기록**
   
