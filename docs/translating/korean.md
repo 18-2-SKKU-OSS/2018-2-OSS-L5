@@ -35,7 +35,7 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
 ## Terms
 - generic bot - **범용 봇*
 
-generic bot is the bot which is able to webhook both incoming/outgoing. generic is oftenly translated into '일반', but its meaning is similar to normal. So we use '범용' which is little bit more strange than '일반', but whose meaning is be able to use anywhere.
+  generic bot is the bot which is able to webhook both incoming/outgoing. generic is oftenly translated into '일반', but its meaning is   similar to normal. So we use '범용' which is little bit more strange than '일반', but whose meaning is be able to use anywhere.
 
 - history - **기록**
   
@@ -44,11 +44,11 @@ generic bot is the bot which is able to webhook both incoming/outgoing. generic 
   `Google: browsing history = 검색 기록`<br>
   `Youtube: watch history = 시청 기록`
   
-History can be translated with '역사', but it means study of past which is improper in this context. In this context, history is used similarly to record. There are a lot of Korean words that means record; '기록', '이력', '내역'. Many websites use '기록' to history because it is intuitive, so we choose to use it.
+  History can be translated with '역사', but it means study of past which is improper in this context. In this context, history is used   similarly to record. There are a lot of Korean words that means record; '기록', '이력', '내역'. Many websites use '기록' to history       because it is intuitive, so we choose to use it.
 
 - linkifier - **링크 변환기**
 
-Linkifier transform regular expression to user defined link. So we translate it '링크 변환기' which means '링크' is phonetic writing of of link, '변환기' is something transforms target source into target destination.
+  Linkifier transform regular expression to user defined link. So we translate it '링크 변환기' which means '링크' is phonetic writing of   of link, '변환기' is something transforms target source into target destination.
 
 - message - **메시지**
   
@@ -67,8 +67,8 @@ Linkifier transform regular expression to user defined link. So we translate it 
 
 - permission - **권한**
 
-Permission is used with organization, stream, etc. And it means control the right in target group, so we translate it to '권한'
- which is similar to right.
+  Permission is used with organization, stream, etc. And it means control the right in target group, so we translate it to '권한'
+  which is similar to right.
  
 - recipient - **받는 사람**
 
