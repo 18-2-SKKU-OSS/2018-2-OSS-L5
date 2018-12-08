@@ -33,6 +33,10 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
 > description
 
 ## Terms
+- collapse - **접기**
+
+  Collapse is translated literally into '붕괴'. But it means like fold in Zulip, so we choose '접기' which has similar meaning of fold.
+
 - generic bot - **범용 봇**
 
   generic bot is the bot which is able to webhook both incoming/outgoing. generic is oftenly translated into '일반', but its meaning is   similar to normal. So we use '범용' which is little bit more strange than '일반', but whose meaning is be able to use anywhere.
