@@ -82,4 +82,4 @@ If there is punctuation marks(**:**, **" "**, etc), then follow original sentenc
 ## Other
 - user / member - **사용자** / **회원**
 
-These two words are very similar, but we think they have different usages. 'User' is used to all the joined people in zulip, and the 'member' is specialized to people in organization or stream. So we translate user into '사용자', and member into '회원' which has more meaning with belonging.
+  These two words are very similar, but we think they have different usages. 'User' is used to all the joined people in zulip, and the     'member' is specialized to people in organization or stream. So we translate user into '사용자', and member into '회원' which has more   meaning with belonging.
