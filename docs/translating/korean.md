@@ -8,12 +8,15 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
 
 ## Terms
 * Subscribe - **구독**
+
 *(Youtube)*
+
 `Youtube: 구독`
 
 ## Phrases
 
 ## Other
+
 * You - **귀하**
 
 The Korean language has polite expressions, and the word "귀하" is a more polite expression for one's opponent.
