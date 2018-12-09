@@ -150,6 +150,7 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
 - Up to - **까지**
 
   According to context, we choose "~ 까지" to translate up to.
+  
   `Up to N minutes after posting : 포스팅 후 N분 까지로 제한`
   
 ## Other
