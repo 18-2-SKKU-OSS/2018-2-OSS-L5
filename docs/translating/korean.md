@@ -96,7 +96,7 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
   Mute operation hide the messages and off the notification. Hide is translated into '숨기기', and 'Turn off' is translated into '끄기'.
   These two words are not compatible. So we choose '뮤트' which is phonetic writing of 'mute'. It is reasonable to use because Twitter     also translate it into '뮤트'.
 
-- non-administrator user = **관리지가 아닌 사용자**
+- non-administrator user - **관리지가 아닌 사용자**
 
   We choose "관리자가 아닌 사용자", rather than "비관리자 사용자", since it sounds softer as Korean translation.
 
@@ -147,6 +147,11 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
 
   We translate 'narrow to' into '한정해서 보기'. '한정해서 보기' may be strange expression to Korean, but there is 'narrow by' in other     file which is exactly translated into '로 한정하기'. So we choose '한정해서 보기' to maintain consistency.
 
+- Up to - **까지**
+
+  According to context, we choose "~ 까지" to translate up to.
+  `Up to N minutes after posting : 포스팅 후 N분 까지로 제한`
+  
 ## Other
 - user / member - **사용자** / **회원**
 
@@ -157,11 +162,6 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
    The Korean language has polite expressions, and the word "귀하" is a more polite expression for one's opponent.
 
    *"귀하" (Google)*
-
-- Up to - **까지**
-
-  According to context, we choose "~ 까지" to translate up to.
-  `Up to N minutes after posting : 포스팅 후 N분 까지로 제한`
 
 - log in / sign in - **로그인**
 
