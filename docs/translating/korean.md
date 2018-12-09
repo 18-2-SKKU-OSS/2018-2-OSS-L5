@@ -1,5 +1,4 @@
 # Korean translation style guide
-
 ## Rules
 ### 1. Formal or Informal? Formal!
 > Use `foraml` grammar
@@ -40,6 +39,15 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
 - collapse - **접기**
 
   Collapse is translated literally into '붕괴'. But it means like fold in Zulip, so we choose '접기' which has similar meaning of fold.
+
+- copied - **복사된**
+
+  *(Naver, Google)*
+
+  `Naver : 복제된, 베껴진`
+  `Google : 복사한`
+
+  Additionally, if some words including past participle should be translated then translate it for appropriate for context
 
 - disposable email - **1회용 이메일**
 
@@ -130,6 +138,22 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
 
     `Youtube: 구독`
 
+4. guest user - **게스트 사용자**
+
+    *(Naver, Google)*
+
+  Naver : 게스트 사용자
+  Google : 게스트 사용자
+
+5. Info - **정보**
+
+    *(Naver,google)*
+
+  Naver : [비격식]정보
+  Google : 정보
+
+   *(Additionally, if abbreviation's word comes then translate it for appropriate for context or original word.)*
+
 ## Phrases
 - in (Somewhere) - **내의**
 
@@ -150,8 +174,12 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
 - Up to - **까지**
 
   According to context, we choose "~ 까지" to translate up to.
-  
+
   `Up to N minutes after posting : 포스팅 후 N분 까지로 제한`
+
+- Yes - **네**
+
+  There are many expressions for 'yes', but we choose '네' to unify expression.
   
 ## Other
 - user / member - **사용자** / **회원**
