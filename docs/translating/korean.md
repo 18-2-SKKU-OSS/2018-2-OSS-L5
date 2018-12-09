@@ -20,8 +20,9 @@ Plural expression is not advanced in Korean languate. Use singular expression of
 
 When translate loanword, then follow loanword orthography. For foreign language, then refer below contents. If there is no description for target word or sentence, then research usages in other websites and follow that form.
 
-`bot - 봇` `emoticon - 이모티콘` `emoji - 이모티콘` `icon - 아이콘` `link - 링크` `member - 회원`
+`bot - 봇` `emoticon - 이모티콘` `emoji - 이모티콘` `icon - 아이콘` `link - 링크` `member - 회원`<br>
 `menu - 메뉴` `mute - 뮤트` `navigation - 네비게이션` `stream - 스트림` `unmute - 언뮤트` `upload - 업로드`
+
 (Reference page: `https://www.korean.go.kr/front/foreignSpell/foreignSpellList.do?mn_id=96`)
 
 ### 5. Punctuation marks / Number expressions
