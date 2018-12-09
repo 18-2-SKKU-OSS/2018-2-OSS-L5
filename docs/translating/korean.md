@@ -20,6 +20,8 @@ Plural expression is not advanced in Korean languate. Use singular expression of
 
 When translate loanword, then follow loanword orthography. For foreign language, then refer below contents. If there is no description for target word or sentence, then research usages in other websites and follow that form.
 
+`bot - 봇` `emoticon - 이모티콘` `emoji - 이모티콘` `icon - 아이콘` `link - 링크` `member - 회원`
+`menu - 메뉴` `mute - 뮤트` `navigation - 네비게이션` `stream - 스트림` `unmute - 언뮤트` `upload - 업로드`
 (Reference page: `https://www.korean.go.kr/front/foreignSpell/foreignSpellList.do?mn_id=96`)
 
 ### 5. Punctuation marks / Number expressions
@@ -48,6 +50,11 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
   `Google : 복사한`
 
   Additionally, if some words including past participle should be translated then translate it for appropriate for context
+
+- custom - **사용자 정의**<br>
+  custom emoji - **사용자 정의 이모티콘**
+
+  It is translated as '사용자 정의' because it means 'user-specified' in the context.
 
 - disposable email - **1회용 이메일**
 
@@ -132,6 +139,12 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
 
   In context reload can be translated into two cases, '다시 로드(하기)'' or '리로드'. First one is verb and another is noun, but since "다시 로드(하기)" is more natural than '리로드(하기)', we choose '다시 로드'.
 
+- required - **필수**
+
+  `Domain for your G Suite team(required) = 당신의 G Suite team을 위한 도메인(필수)`
+
+  It is translated as '(필수)' in terms that mean essential things in context.
+
 - Subscribe - **구독**
 
     *(Youtube)*
@@ -180,7 +193,15 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
 - Yes - **네**
 
   There are many expressions for 'yes', but we choose '네' to unify expression.
-  
+
+-  be subscribed to - **을 구독하다**
+
+   `You are subscribed to this stream. = 당신은 이 스트림을 구독하고 있습니다.`
+
+- reply to - **에 회신하다**
+
+  `There are no messages to reply to. = 회신할 메시지가 없습니다.`
+
 ## Other
 - user / member - **사용자** / **회원**
 
