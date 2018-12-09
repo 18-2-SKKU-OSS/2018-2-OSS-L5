@@ -3,6 +3,7 @@
 ## Rules
 
 ## Terms
+  
 - message - **메시지**
   
   *(Naver, Google)*
@@ -21,4 +22,8 @@
 
 ## Phrases
 
+
+
 ## Other
+
+
