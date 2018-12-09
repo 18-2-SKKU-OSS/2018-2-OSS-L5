@@ -61,6 +61,13 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
 
   generic bot is the bot which is able to webhook both incoming/outgoing. generic is oftenly translated into '일반', but its meaning is   similar to normal. So we use '범용' which is little bit more strange than '일반', but whose meaning is something can be able to use       anywhere.
 
+- guest user - **게스트 사용자**
+
+    *(Naver, Google)*
+
+    `Naver : 게스트 사용자`<br>
+    `Google : 게스트 사용자`
+    
 - help center - **도움 센터**
 
   It represent the group of inforamtion about explains how to running and using Zulip, and help to solve error cases. Since it is kind of a proper noun, we translate it directly.
@@ -73,7 +80,16 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
   `Youtube: watch history = 시청 기록`
 
   History can be translated with '역사', but it means study of past which is improper in this context. In this context, history is used   similarly to record. There are a lot of Korean words that means record; '기록', '이력', '내역'. Many websites use '기록' to history       because it is intuitive, so we choose to use it.
+  
+- Info - **정보**
 
+    *(Naver,google)*
+
+    Naver : [비격식]정보
+    Google : 정보
+
+    Additionally, if abbreviation's word comes then translate it for appropriate for context or original word.
+    
 - invalid - **유효하지 않은**
 
   Invalid can be translated into '유효하지 않은' and '잘못된'. '잘못된' means wrong. We think it can't represent various invalid             situations, so we choose '유효하지 않은' which is not oftenly used but can handle wide range.
@@ -137,22 +153,6 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
     *(Youtube)*
 
     `Youtube: 구독`
-
-4. guest user - **게스트 사용자**
-
-    *(Naver, Google)*
-
-  Naver : 게스트 사용자
-  Google : 게스트 사용자
-
-5. Info - **정보**
-
-    *(Naver,google)*
-
-  Naver : [비격식]정보
-  Google : 정보
-
-   *(Additionally, if abbreviation's word comes then translate it for appropriate for context or original word.)*
 
 ## Phrases
 - in (Somewhere) - **내의**
