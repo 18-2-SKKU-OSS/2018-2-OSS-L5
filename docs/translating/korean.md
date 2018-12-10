@@ -199,9 +199,9 @@ According to Korean grammar, the spacing behind the numbers is in principle, but
 
    `You are subscribed to this stream. = 당신은 이 스트림을 구독하고 있습니다.`
 
-- reply to - **에 하다**
+- reply to - **에 답장하다**
 
-  `There are no messages to reply to. = 회신할 메시지가 없습니다.`
+  `There are no messages to reply to. = 할 메시지가 없습니다.`
 
 ## Other
 - user / member - **사용자** / **회원**
